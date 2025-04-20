@@ -1,5 +1,11 @@
 import streamlit as st
-from processing.law_processor import process_search, process_amendment
+import sys
+import os
+
+# 현재 경로에 processing 모듈 경로 추가
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "processing")))
+
+from law_processor import process_search, process_amendment
 
 st.set_page_config(layout="wide")
 st.title("📘 부칙개정 도우미")
